@@ -150,7 +150,7 @@ class _HomeState extends State<Home> {
                 ? Column(
                     children: [
                       Container(
-                        height: 200,
+                        height: 180,
                         width: 200,
                         child: Image.file(_imagefile),
                       ),
@@ -162,9 +162,8 @@ class _HomeState extends State<Home> {
                           : "Retry"),
                       Text("Probability - " +
                           (_pridiction[0]["confidence"] != null
-                              ? (_pridiction[0]["confidence"]
-                                      .toString()
-                                      .substring(2, 4) +
+                              ? (((_pridiction[0]["confidence"])*100).toString()
+                                       +
                                   "%")
                               : "retry"))
                     ],
